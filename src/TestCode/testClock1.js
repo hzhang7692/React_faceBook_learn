@@ -15,12 +15,15 @@ export class Clock extends React.Component {
     )
   }
 }
-export function change2() {
-  ReactDOM.render(
-    <Clock data={new Date()} />,
-    document.getElementById('root')
-    // <Clock date={new Date()} />,
-    // document.getElementById('root')
 
-  )
+export function change2() {
+  setInterval(() => {
+    ReactDOM.render(
+      <Clock data={new Date()} />,
+      document.getElementById('root')
+      // <Clock date={new Date()} />,
+      // document.getElementById('root')
+
+    )
+  }, 1000)
 }

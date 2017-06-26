@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 
-
-
 function formatName(user) {
   return user.firstName + ' ' + user.lastName
 }
@@ -32,14 +30,14 @@ const element2 = React.createElement(
   { className: 'greeting' },
   'Hello, world!'
 )
-export  class MYTestComponent extends Component {
+export class MYTestComponent extends Component {
   render() {
     return (
 
       <h1>
         {getGreeting(user)}
         我是组件里面的属性:
-        
+
         {this.props.sx}
       </h1>
     )
@@ -61,9 +59,17 @@ function tick() {
   setInterval(tick, 1000);
 }
 
-export function runChange(){
-    setTimeout(() => {
-      tick()
-    }, 5000)
-  }
+export function runChange() {
+
+  ReactDOM.render(
+    // element,
+    <MYTestComponent sx='XXXXXXXXS' />,
+    document.getElementById('root')
+  )
+
+
+  setTimeout(() => {
+    tick()
+  }, 5000)
+}
 

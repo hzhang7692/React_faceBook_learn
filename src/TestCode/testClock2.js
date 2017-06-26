@@ -2,40 +2,56 @@ import React, { Component } from 'react'
 
 import ReactDOM from 'react-dom'
 
+function FormattedDate(props) {
+  return <h2>It is {props.date.toLocaleTimeString()}.</h2>
+}
 
-
-export class Clock extends Component {
+class Clock extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      date: new Date()
-    }
+    this.state = { date: new Date() }
   }
-  //创建    生命周期 
+
   componentDidMount() {
-    
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    )
   }
-  //销毁    生命周期
+
   componentWillUnmount() {
-    
+    clearInterval(this.timerID)
   }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    })
+  }
+
   render() {
     return (
       <div>
-        <h1>
-          我是自定义组件Clock
-        </h1>
-        <h2>
-          {this.state.date.toLocaleTimeString()}
-        </h2>
+        <h1>Hello, world!</h1>
+        <FormattedDate date={this.state.date} />
       </div>
     )
   }
 }
+
+const App = (
+  <div>
+    <Clock />
+    <Clock />
+    <Clock />
+  </div>
+)
+
+
+
 export function change3() {
-  ReactDOM.render(
-    // element,
-    <Clock />,
-  document.getElementById('root')
-  )
+  
+
+  ReactDOM.render(App, document.getElementById('root'))
 }
+
