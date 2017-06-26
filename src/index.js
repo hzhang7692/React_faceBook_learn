@@ -21,8 +21,28 @@
 // import { handleTest } from './TestCode/handleEvent'
 // handleTest()
 
-import { redenTest1 } from './TestCode/rederTest1'
-redenTest1()
+// import { rederTest1 } from './TestCode/rederTest1'
+// rederTest1()
 
+// import { rederTest2 } from './TestCode/rederTest2'
+// rederTest2()
 
+// import { listAndKetTest } from './TestCode/listsAndKeys'
+// listAndKetTest()
+
+// import { formTest } from './TestCode/formTest'
+// formTest()
+
+ 
+
+// import { formTest2 } from './TestCode/formTest2'
+// formTest2()
+
+// import { liftingStateUpTest } from './TestCode/liftingStateUp'
+// liftingStateUpTest()
+
+import { compositionVsIheritance_Test1 } from './TestCode/compositionVsIheritance1'
+compositionVsIheritance_Test1()
+
+ 
 
